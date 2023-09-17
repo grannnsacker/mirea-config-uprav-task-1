@@ -42,7 +42,3 @@ class Tree:
         elem = self.get_node_by_path(parent_path)
         if elem:
             elem.add_children(self_name, is_dir)
-
-
-
-
