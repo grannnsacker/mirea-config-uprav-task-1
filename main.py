@@ -1,14 +1,16 @@
 from zipfile import ZipFile
 from cfg import ZIP_PATH, PATH_TO_PROJECT_DIRECTORY
 from tree import Tree
+import sys
+
 
 
 class vshell:
-    def __init__(self):
+    def __init__(self, path=ZIP_PATH):
         self.root_path = "root"
         self.current_path = ""
         self.file_system = Tree("root")
-        self.zip_file = ZipFile(ZIP_PATH)
+        self.zip_file = ZipFile(path)
         self.files = self.zip_file.filelist
         for i in self.files:
             print(i.filename)
@@ -254,7 +256,10 @@ class vshell:
 
 
 if __name__ == '__main__':
-    shell = vshell()
+    if len(sys.argv) > 1:
+        shell = vshell(sys.argv[1])
+    else:
+        shell = vshell()
     shell.create_file_system()
     shell.run()
 
