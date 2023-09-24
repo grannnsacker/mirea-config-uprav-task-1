@@ -13,9 +13,7 @@ class Tree:
             children_node = Tree.Node(self.path + '/' + name, is_dir)
             children_node.parent = self
             children_node.is_directory = is_dir
-            #children_node.path =  #+ ('/' if children_node.is_directory else '')
             self.children.append(children_node)
-            #print(f"||{children_node}, {children_node.parent}, {children_node.path}||")
 
     def __init__(self, name):
         self.root = self.Node(name, True)
