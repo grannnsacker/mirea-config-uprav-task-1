@@ -1,8 +1,7 @@
 from zipfile import ZipFile
-from cfg import ZIP_PATH, PATH_TO_PROJECT_DIRECTORY
+from cfg import ZIP_PATH
 from tree import Tree
 import sys
-
 
 
 class vshell:
